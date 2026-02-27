@@ -12,6 +12,8 @@
  */
 
 #include <DHT.h>
+#define DHTPIN 2        // Data pin connected to pin 2
+#define DHTTYPE DHT11   // Sensor type
 
 // TODO 1:
 // Define the DHT data pin (Use digital pin 2)
@@ -22,19 +24,24 @@
 // TODO 3:
 // Create a DHT object using the defined pin and sensor type
 
+DHT dht(DHTPIN, DHTTYPE);
+
 void setup() {
-
-    // TODO 4:
-    // Initialize Serial communication (9600 baud rate)
-
-    // TODO 5:
-    // Initialize the DHT sensor
-
-    // TODO 6:
-    // Print a system initialization message
-}
+    Serial.begin(9600);
+    dht.begin();
 
 void loop() {
+
+    float humidity = dht.readHumidity();
+    float temperature = dht.readTemperature();
+
+    Serial.print("Humidity: ");
+    Serial.print(humidity);
+    Serial.print("Temperature: ");
+    Serial.print(temperature);
+    Serial.println(" °C");
+    delay(2000);
+}
 
     // TODO 7:
     // Read humidity value from sensor

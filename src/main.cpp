@@ -32,6 +32,13 @@ void setup() {
 
 void loop() {
 
+    float humidity = dht.readHumidity();
+    float temperature = dht.readTemperature();
+
+    Serial.print("Humidity: ");
+    Serial.print(humidity);
+}
+
     // TODO 7:
     // Read humidity value from sensor
 

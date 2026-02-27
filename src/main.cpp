@@ -12,6 +12,8 @@
  */
 
 #include <DHT.h>
+#define DHTPIN 2        // Data pin connected to pin 2
+#define DHTTYPE DHT11   // Sensor type
 
 // TODO 1:
 // Define the DHT data pin (Use digital pin 2)

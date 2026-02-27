@@ -40,6 +40,7 @@ void loop() {
     Serial.print("Temperature: ");
     Serial.print(temperature);
     Serial.println(" °C");
+    delay(2000);
 }
 
     // TODO 7:

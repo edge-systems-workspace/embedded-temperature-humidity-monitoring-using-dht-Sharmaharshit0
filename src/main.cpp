@@ -24,17 +24,11 @@
 // TODO 3:
 // Create a DHT object using the defined pin and sensor type
 
+DHT dht(DHTPIN, DHTTYPE);
+
 void setup() {
-
-    // TODO 4:
-    // Initialize Serial communication (9600 baud rate)
-
-    // TODO 5:
-    // Initialize the DHT sensor
-
-    // TODO 6:
-    // Print a system initialization message
-}
+    Serial.begin(9600);
+    dht.begin();
 
 void loop() {
 
